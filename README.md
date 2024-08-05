@@ -15,5 +15,6 @@ Sudoku generator & solver
 ```
 
 ```batch
+  pip install -r requirements.txt
   python main.py
 ```

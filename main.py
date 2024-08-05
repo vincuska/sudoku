@@ -2,7 +2,7 @@ import random
 from blessed import Terminal
 
 term = Terminal()
-
+print(term.hide_cursor(), end='')
 
 def clear():
     print(term.clear(), end="")

@@ -5,7 +5,6 @@ term = Terminal()
 
 
 def clear():
-    # Use blessed to clear the screen
     print(term.clear(), end="")
 
 

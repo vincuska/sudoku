@@ -1,14 +1,9 @@
 import random
 from blessed import Terminal
 
-term = Terminal()
-print(term.hide_cursor(), end='')
+CLEAR = '\033c'
 
-def clear():
-    print(term.clear(), end="")
-
-
-clear()
+print(CLEAR)
 print("")
 
 
@@ -171,40 +166,40 @@ def main_menu():
         choice = input("Choose an option: ")
         if choice == "1":
             difficulty = input("Enter difficulty (easy, medium, hard): ").lower()
-            clear()
+            print(CLEAR)
             puzzle = generate_sudoku(difficulty)
             print_sudoku(puzzle)
         elif choice == "2":
             if puzzle is None:
-                clear()
+                print(CLEAR)
                 print("No puzzle to solve. Generate or enter a puzzle first.")
             else:
                 if solve_sudoku(puzzle):
-                    clear()
+                    print(CLEAR)
                     print_sudoku(puzzle)
                 else:
-                    clear()
+                    print(CLEAR)
                     print("No solution exists for the Sudoku puzzle.")
         elif choice == "3":
             if puzzle is None:
-                clear()
+                print(CLEAR)
                 print("No puzzle to print. Generate or enter a puzzle first.")
             else:
-                clear()
+                print(CLEAR)
                 print_sudoku(puzzle)
         elif choice == "4":
-            clear()
+            print(CLEAR)
             puzzle = enter_sudoku()
-            clear()
+            print(CLEAR)
             print_sudoku(puzzle)
         elif choice == "5":
             break
         else:
             if puzzle is None:
-                clear()
+                print(CLEAR)
                 print("No puzzle to print. Generate or enter a puzzle first.")
             else:
-                clear()
+                print(CLEAR)
                 print_sudoku(puzzle)
 
 
